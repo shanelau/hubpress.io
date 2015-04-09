@@ -1,0 +1,91 @@
+= 响应式的嵌入内容和图片
+:published_at:2014-08-03
+
+
+
+根据被嵌入内容的外部容器的宽度，自动创建一个固定的比例，从而让浏览器自动确定视频或 slideshow 的尺寸，能够在各种设备上缩放。
+
+这些规则被直接应用在 iframe、embed 和 object 元素上。如果你希望让最终样式与其他属性相匹配，还可以明确地使用一个派生出来的 .embed-responsive-item 类。  
+
+超级提示： 不需要为 iframe 元素设置 frameborder="0" 属性，因为我们已经替你这样做了！
+## 先看demo
+[DEMO](http://kissliux.github.io/demo/responsive-img.html)
+
+## 等比缩放的属性，基于padding.  
+padding的可选参数 ，  % 为父元素的宽度百分比 padding-bottom:50%; 即变成了 2比1的比例了
+
+
+|值	|描述|
+|---|----|
+|auto	|浏览器计算内边距。|
+|length	|规定以具体单位计的内边距值，比如像素、厘米等。默认值是 0px。|
+|%	|规定基于父元素的宽度的百分比的内边距。|
+|inherit	|规定应该从父元素继承内边距。|
+
+## 具体实现
+
+16比9的大小
+
+``` html
+        <!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-youku">
+<iframe class="embed-responsive-item" src="http://player.youku.com/embed/XNzQ0NzIzOTM2" frameborder=0 allowfullscreen></iframe>
+</div>
+
+```
+
+LESS代码
+
+
+```   
+
+.embed-responsive {
+    position:relative;
+    display:block;
+    height:0;
+    padding:0;
+    overflow:hidden
+}
+.embed-responsive .embed-responsive-item, .embed-responsive iframe, .embed-responsive embed, .embed-responsive object {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    border:0
+}
+.embed-responsive.embed-responsive-16by9 {
+    padding-bottom:56.25%
+}
+.embed-responsive.embed-responsive-2by1 {
+    padding-bottom:50%
+}
+.embed-responsive.embed-responsive-4by3 {
+    padding-bottom:75%
+}
+.embed-responsive.embed-responsive-youku {
+    padding-bottom:60.93023256%
+}
+```
+
+### 等比缩放图片
+
+
+```
+
+<div class="embed-responsive embed-responsive-2by1">
+    <img class="embed-responsive-item" src="assets/images/b.jpg">
+</div>
+``` 
+
+
+### 响应式图片
+
+```
+.pure-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+```
