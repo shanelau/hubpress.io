@@ -17,13 +17,13 @@
 
     <link rel="canonical" href="https://shanelau.github.io/2015/02/10/moduleexports-exports.html" />
     
-    <meta property="og:site_name" content="" />
+    <meta property="og:site_name" content="狂飙蜗牛" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="module.exports 与 exports区别" />
     <meta property="og:description" content="在浏览器端js里面，为了解决各模块变量冲突等问题，往往借助于js的闭包把所有模块相关的代码都包装在一个匿名函数里。而Node.js编写模块相当的自由，开发者只需要关注require，exports，module等几个变量就足够，而为了保持模块的可读性，很推荐把不同功能的代码块都写成独立模块，减少各模块耦合。开发者可以在“全局”环境下任意使用var申明变量（不用写到闭包里了），通过exports暴露接口给调用者。 我们经常看到类似export.xxx = yyy或者module.exports = xx这样的代码，可实际在通过require函数引入模块时会出现报错的情况，这是什么原因导致的呢？ Node.js在模块编译的过程中会对模块进行包装，最终会返回类似下面的代码： (function (exports, require, module, __filename, __dirname) {     // module code... }); 其中，module就是这个模块本身，require是对Node.js实现查找模块的模块Module._load实例的引用，filename和dirname是Node...." />
     <meta property="og:url" content="https://shanelau.github.io/2015/02/10/moduleexports-exports.html" />
     <meta property="article:published_time" content="2015-02-09T16:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-04-09T08:13:20.763Z" />
+    <meta property="article:modified_time" content="2015-04-09T08:29:05.788Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="module.exports 与 exports区别" />
@@ -34,7 +34,7 @@
 {
     "@context": "http://schema.org",
     "@type": "Article",
-    "publisher": "",
+    "publisher": "狂飙蜗牛",
     "author": {
         "@type": "Person",
         "name": "liu.xing",
@@ -45,13 +45,13 @@
     "headline": "module.exports 与 exports区别",
     "url": "https://shanelau.github.io/2015/02/10/moduleexports-exports.html",
     "datePublished": "2015-02-09T16:00:00.000Z",
-    "dateModified": "2015-04-09T08:13:20.763Z",
+    "dateModified": "2015-04-09T08:29:05.788Z",
     "description": "在浏览器端js里面，为了解决各模块变量冲突等问题，往往借助于js的闭包把所有模块相关的代码都包装在一个匿名函数里。而Node.js编写模块相当的自由，开发者只需要关注require，exports，module等几个变量就足够，而为了保持模块的可读性，很推荐把不同功能的代码块都写成独立模块，减少各模块耦合。开发者可以在“全局”环境下任意使用var申明变量（不用写到闭包里了），通过exports暴露接口给调用者。 我们经常看到类似export.xxx = yyy或者module.exports = xx这样的代码，可实际在通过require函数引入模块时会出现报错的情况，这是什么原因导致的呢？ Node.js在模块编译的过程中会对模块进行包装，最终会返回类似下面的代码： (function (exports, require, module, __filename, __dirname) {     // module code... }); 其中，module就是这个模块本身，require是对Node.js实现查找模块的模块Module._load实例的引用，filename和dirname是Node...."
 }
     </script>
 
     <meta name="generator" content="Ghost ?" />
-    <link rel="alternate" type="application/rss+xml" title="" href="https://shanelau.github.io/rss" />
+    <link rel="alternate" type="application/rss+xml" title="狂飙蜗牛" href="https://shanelau.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
 <body class="post-template">
@@ -278,7 +278,7 @@ James Dio</code></pre>
 
 
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://shanelau.github.io"></a> &copy; 2015</section>
+        <section class="copyright"><a href="https://shanelau.github.io">狂飙蜗牛</a> &copy; 2015</section>
         <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
     </footer>
 
