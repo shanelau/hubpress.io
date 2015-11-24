@@ -1,6 +1,6 @@
 var direct = 'DIRECT';
 //var http_proxy = 'SOCKS5 127.0.0.1:1080; SOCKS 127.0.0.1:1080; DIRECT';
-var http_proxy = 'PROXY 127.0.0.1:8123; DIRECT';
+var http_proxy = 'PROXY 107.170.252.137:8888; DIRECT';
 
 var gfwed_list = [
   "akamai.net",
